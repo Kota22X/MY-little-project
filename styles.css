@@ -1,0 +1,133 @@
+/* style.css - Fancy but Stable */
+
+/* Gradient Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e293b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: #e2e8f0;
+}
+
+/* Header */
+header {
+    background: #1e293b;
+    color: #00b4d8;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 0 10px rgba(0,180,216,0.5);
+}
+
+/* Navigation */
+nav {
+    background: #0f172a;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a, nav b {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00b4d8;
+}
+
+/* SAC Section */
+section.sac {
+    background: #1e293b;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,180,216,0.5), 0 4px 12px rgba(0,0,0,0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.sac:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,180,216,0.7), 0 6px 20px rgba(0,0,0,0.5);
+}
+
+section.sac h2 {
+    color: #00b4d8;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    background: #0f172a;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00b4d8;
+    box-shadow: 0 0 10px rgba(0,180,216,0.5);
+    outline: none;
+}
+
+/* Button */
+section.sac button {
+    background: linear-gradient(45deg, #00b4d8, #0096c7);
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+section.sac button:hover {
+    background: linear-gradient(45deg, #0096c7, #0077a3);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 3rem 0 1rem 0;
+    letter-spacing: 0.5px;
+}
