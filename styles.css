@@ -131,3 +131,32 @@ footer {
     margin: 3rem 0 1rem 0;
     letter-spacing: 0.5px;
 }
+
+/* LIGHT MODE */
+body.light-mode {
+    background: linear-gradient(-45deg, #e2e8f0, #f8fafc, #e2e8f0, #f8fafc);
+    color: #0f172a;
+}
+
+body.light-mode header {
+    background: #f1f5f9;
+    color: #0077a3;
+    text-shadow: none;
+}
+
+body.light-mode nav {
+    background: #e2e8f0;
+}
+
+body.light-mode nav a,
+body.light-mode nav b {
+    color: #0f172a;
+}
+
+body.light-mode nav a:hover {
+    color: #0077a3;
+}
+
+body.light-mode footer {
+    color: #334155;
+}
