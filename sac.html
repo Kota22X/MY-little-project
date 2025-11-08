@@ -4,93 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games World - SAC</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(120deg, #0f172a, #1e293b);
-            margin: 0;
-            padding: 0;
-            color: #e2e8f0;
-        }
-        header {
-            background: #1e293b;
-            color: #00b4d8;
-            padding: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-        nav {
-            background: #0f172a;
-            padding: 0.7rem 1rem;
-            text-align: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-        }
-        nav a, nav b {
-            color: #e2e8f0;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            font-weight: 500;
-        }
-        nav a:hover {
-            color: #00b4d8;
-        }
-        section.sac {
-            background: #1e293b;
-            max-width: 500px;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-        section.sac h2 {
-            color: #00b4d8;
-            margin-bottom: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 1.2rem;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.3rem;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: none;
-            font-size: 1rem;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
-        .form-group textarea {
-            resize: vertical;
-        }
-        section.sac button {
-            background: #00b4d8;
-            color: #0f172a;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            font-weight: 600;
-        }
-        section.sac button:hover {
-            background: #0096c7;
-        }
-        footer {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin: 2rem 0 1rem 0;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -150,7 +64,31 @@
 
         <p>© 2025 Games World. Todos os direitos reservados.</p>
     </footer>
+<script>
+        const toggleButton = document.getElementById('toggle-theme');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        }
+
+        // Toggle theme on button click
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if(body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                toggleButton.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
 
 </html>
+
 
