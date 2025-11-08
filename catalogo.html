@@ -43,6 +43,30 @@
 
     <!-- ✅ Apenas esta página carrega o script -->
     <script src="js_carrega_dados.js"></script>
+    <script>
+        const toggleButton = document.getElementById('toggle-theme');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        }
+
+        // Toggle theme on button click
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if(body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                toggleButton.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
 </html>
+
 
