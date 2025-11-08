@@ -1,20 +1,29 @@
-// Wait until the page is loaded before running anything
+// theme.js
 window.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("toggle-theme");
   const body = document.body;
 
-  // Check saved theme when page loads
+  // Apply saved theme
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark-mode");
+  if (savedTheme === "light") {
+    body.classList.add("light-mode");
+    if (button) button.textContent = "☀️";
+  } else {
+    body.classList.remove("light-mode");
+    if (button) button.textContent = "🌙";
   }
 
-  // Button click to toggle theme
-  button.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    // Save current theme
-    const theme = body.classList.contains("dark-mode") ? "dark" : "light";
-    localStorage.setItem("theme", theme);
-  });
+  // Toggle theme if button exists
+  if (button) {
+    button.addEventListener("click", () => {
+      body.classList.toggle("light-mode");
+      if (body.classList.contains("light-mode")) {
+        button.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+      } else {
+        button.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  }
 });
